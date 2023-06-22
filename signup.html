@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body align="center">
+        <h1>CREATE YOUR ACCOUNT</h1>
+        <table cellspacing="2" align="center" cellpadding="8" border="0">
+            <tr>
+                <td align="left">NAME:</td>
+                <td><input type="text" placeholder="Enter your name" id="n1"></td>
+            </tr>
+            <tr>
+                <td align="left">EMAIL:</td>
+                <td><input type="text" placeholder="Enter your email id" id="e1"></td>
+            </tr>
+            <tr>
+                <td align="left">SET PASSWORD:</td>
+                <td><input type="password" placeholder="Set your password" id="p1"></td>
+            </tr>
+            <tr>
+                <td align="left">CONFIRM PASSWORD:</td>
+                <td><input type="password" placeholder="Confirm your password" id="p2"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="Create" onclick="create_account()"></td>
+            </tr>
+        </table>
+
+        <script type="text/javascript">
+            function create_account() {
+                var n = document.getElementById("n1").value;
+                var e = document.getElementById("e1").value;
+                var p = document.getElementById("p1").value;
+                var cp = document.getElementById("p2").value;
+        
+                var letter = /^[A-Za-z\s]+$/;
+                var email_val = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+        
+                if (n == "" || e == "" || p == "" || cp == "") {
+                    alert("Enter details correctly");
+                } 
+                else if (!letter.test(n)) {
+                    alert("Name is incorrect, it must contain alphabet characters only");
+                } 
+                else if (!email_val.test(e)) {
+                    alert("Invalid email format");
+                } 
+                else if (p != cp) {
+                    alert("Password does not match");
+                }
+                else if (document.getElementById("p1").value.length>12) {
+                    alert("Password maximun length is 12");
+                }
+                else if (document.getElementById("p1").value.length<6) {
+                    alert("Password minimum length is 6");
+                }
+                else {
+                // Account creation logic here
+                alert("Account created successfully!");
+                }
+            }
+        </script>
+                
+    </body>
+</html>

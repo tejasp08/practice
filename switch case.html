@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fcfcfc;
+        } 
+
+        /* .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: left;
+        } */
+
+        header {
+            font-size: 30px;
+            background-color: rgb(12, 248, 20);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>Switch Case Operations</header>
+        <h1>To Calculate the following</h1>
+        <label for="Num1">Number 1:</label>
+        <input type="number" id="Num1">
+        <br>
+        <label for="Num2">Number 2:</label>
+        <input type="number" id="Num2">
+        <br>
+        <label for="operation">Select operator(+, -, *, /):</label>
+        <input type="text" id="operation">
+        <br>
+        <button onclick="myFunction()">Calculate</button>
+        <p id="Result"></p>
+        
+    </div>
+
+    <script>
+        function myFunction() {
+            let Num1 = document.getElementById("Num1").value;
+            let Num2 = document.getElementById("Num2").value;
+            let operation = document.getElementById("operation").value;
+
+            let Result;
+
+            switch (operation) {
+                case "+":
+                    Result = parseInt(Num1) + parseInt(Num2);
+                    break;
+                case "-":
+                    Result = Num1 - Num2;
+                    break;
+                case "*":
+                    Result = Num1 * Num2;
+                    break;
+                case "/":
+                    Result = Num1 / Num2;
+                    break;
+                default:
+                    Result = "Please Enter Valid Operation!!";
+            }
+
+            document.getElementById("Result").innerHTML = "Result: " + Result;
+        }
+    </script>
+</body>
+</body>
+
+</html>
